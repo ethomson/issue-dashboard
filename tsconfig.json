@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "lib",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "target": "es2018",
+    "lib": [ "es2020.string" ]
+  },
+  "include": [ "src" ]
+}

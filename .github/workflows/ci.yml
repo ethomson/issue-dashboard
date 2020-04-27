@@ -1,0 +1,152 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  #
+  # Build and test
+  #
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out source
+      uses: actions/checkout@v2
+    - name: Build and Test
+      run: |
+        npm ci
+        npm run build
+        npm test
+
+  #
+  # Publish the action to the `dist` branch
+  #
+  publish_action:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Check out source
+      uses: actions/checkout@v2
+    - name: Check out distribution branch
+      uses: actions/checkout@v2
+      with:
+        ref: 'dist'
+        path: 'dist'
+    - name: Package
+      run: |
+        npm install
+        npm run pack
+
+        mkdir -p dist/documentation
+        mkdir -p dist/examples
+
+        cp action.yml dist/
+        cp README.md dist/
+        cp LICENSE.txt dist/
+        cp documentation/* dist/documentation/
+        cp examples/* dist/examples/
+    - name: Check for changes
+      id: status
+      run: |
+        source ../.github/workflows/actions.sh
+        if [ -n "$(git status --porcelain)" ]; then
+          set_output has_changes 1
+        fi
+      working-directory: dist
+    - name: Publish action
+      run: |
+        git add --verbose .
+        git config user.name 'Edward Thomson'
+        git config user.email 'ethomson@edwardthomson.com'
+        git commit -m 'Update from CI' --allow-empty
+        git push origin dist
+      if: steps.status.outputs.has_changes == '1'
+      working-directory: dist
+
+  #
+  # Publish the documentation to the `gh-pages` branch
+  #
+  publish_documentation:
+    runs-on: ubuntu-latest
+    needs: publish_action
+
+    steps:
+    - name: Check out source
+      uses: actions/checkout@v2
+    - name: Check out documentation branch
+      uses: actions/checkout@v2
+      with:
+        ref: 'gh-pages'
+        path: 'gh-pages'
+    - name: Generate documentation
+      run: |
+        mkdir -p gh-pages/documentation
+        mkdir -p gh-pages/examples
+
+        ( echo -e "---\ntitle: issue-dashboard\n---\n\n{% raw %}\n" && cat README.md && echo -e "\n{% endraw %}" ) > gh-pages/index.md
+        ( echo -e "---\ntitle: issue-dashboard Documentation\n---\n\n{% raw %}\n" && cat documentation/README.md && echo -e "\n{% endraw %}" ) > gh-pages/documentation/index.md
+        cp LICENSE.txt gh-pages/
+        cp documentation/*.png gh-pages/documentation/
+
+        cp resources/dashboard.js gh-pages/examples/dashboard.js
+        cp resources/default.css gh-pages/examples/dashboard.css
+
+    # This is not an example of best practices of using this action.
+    # Normally, you would specify your configuration in-line to the
+    # uses step.  To have a single source for defining examples, we'll
+    # read the configuration as it exists on-disk.
+    - name: Read configuration
+      id: config
+      run: |
+        source .github/workflows/actions.sh
+        set_output static_values "$(cat examples/static-values.yml)"
+        set_output issue_queries "$(cat examples/issue-queries.yml)"
+        set_output javascript_expressions "$(cat examples/javascript-expressions.yml)"
+
+    - name: 'Build example: static values'
+      uses: ethomson/issue-dashboard@dist
+      with:
+        config: |
+          ${{ steps.config.outputs.static_values }}
+        token: ${{ github.token }}
+    - name: 'Publish example: static values'
+      run: mv dashboard.html gh-pages/examples/static-values.html
+
+    - name: 'Build example: issue queries'
+      uses: ethomson/issue-dashboard@dist
+      with:
+        config: |
+          ${{ steps.config.outputs.issue_queries }}
+        token: ${{ github.token }}
+    - name: 'Publish example: issue queries'
+      run: mv dashboard.html gh-pages/examples/issue-queries.html
+
+    - name: 'Build example: JavaScript expressions'
+      uses: ethomson/issue-dashboard@dist
+      with:
+        config: |
+          ${{ steps.config.outputs.javascript_expressions }}
+        token: ${{ github.token }}
+    - name: 'Publish example: JavaScript expressions'
+      run: mv dashboard.html gh-pages/examples/javascript-expressions.html
+
+    - name: Check for changes
+      id: status
+      run: |
+        source ../.github/workflows/actions.sh
+        if [ -n "$(git status --porcelain)" ]; then
+          set_output has_changes 1
+        fi
+      working-directory: gh-pages
+    - name: Publish documentation
+      run: |
+        git add --verbose .
+        git config user.name 'Edward Thomson'
+        git config user.email 'ethomson@edwardthomson.com'
+        git commit -m 'Documentation update'
+        git push origin gh-pages
+      if: steps.status.outputs.has_changes == '1'
+      working-directory: gh-pages
