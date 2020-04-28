@@ -1,0 +1,95 @@
+title: 'Static Values'
+description: 'A simple demonstration of a dashboard with static values.  This can be useful to render the results of another application that collects data and emits a dashboard configuration in YAML or JSON.'
+
+output:
+  format: html
+  filename: dashboard.html
+
+sections:
+- title: 'Metric to US conversions'
+  description: 'Distance, mass and volume; metric to US.'
+  widgets:
+  - type: number
+    value: '1.61'
+    title: 'Kilometers in a mile'
+    url: 'https://www.google.com/search?q=km+to+miles'
+    color: 'blue'
+  - type: number
+    value: '0.454'
+    title: 'Kilographs in a pound'
+    color: 'red'
+  - type: number
+    value: '1.06'
+    title: 'Liters in a quart'
+    color: 'green'
+
+# The section section is US to metric conversions
+- title: 'US to metric conversions'
+  description: 'Distance, mass and volume; US to metric.'
+  widgets:
+  - type: number
+    value: '0.621'
+    title: 'Miles in a kilometer'
+    url: 'https://www.google.com/search?q=miles+to+km'
+    color: 'blue'
+  - type: number
+    value: '2.20'
+    title: 'Pounds in a kilogram'
+    color: 'red'
+  - type: number
+    value: '0.946'
+    title: 'Quarts in a liter'
+    color: 'green'
+
+- title: 'Memorable quotes'
+  description: 'Some notable quotations'
+  widgets:
+  - type: 'string'
+    title: 'Ernest Hemingway'
+    value: 'The way to make people trustworthy is to trust them.'
+    color: 'blue'
+  - type: 'string'
+    title: 'Joshua from War Games'
+    value: 'The only way to win is not to play.'
+    color: 'black'
+
+- title: 'Pizza preferences'
+  description: 'Type of pizza preferred by respondents.'
+  widgets:
+  - type: graph
+    title: Pizza variety
+    elements:
+    - title: New York
+      value: 18
+      color: green
+    - title: Chicago
+      value: 16
+    - title: Neopolitan
+      value: 15
+    - title: 'New Haven'
+      value: 1
+      color: red
+
+- title: 'Important Dates'
+  description: 'Important dates throughout history.'
+  widgets:
+  - type: 'table'
+    title: 'Historic US dates'
+    headers:
+    - 'Date'
+    - 'Description'
+    elements:
+    - [ '1775-04-19', 'Battles of Lexington and Concord' ]
+    - - value: '1776-07-04'
+        color: 'blue'
+        url: 'https://en.wikipedia.org/wiki/Independence_Day_(United_States)'
+      - value: 'Independence Day'
+        color: 'red'
+        url: 'https://en.wikipedia.org/wiki/Independence_Day_(United_States)'
+    - - value: '1929-10-24'
+        color: 'black'
+      - value: 'Black Thursday; the stock market crash of {{ 1928 + 1 }}'
+        color: 'black'
+    - [ '1933-12-05', 'Repeal of prohibition' ]
+    - [ '1973-01-22', 'Roe v Wade' ]
+    - [ '2015-06-26', 'Obergefell v Hodges' ]

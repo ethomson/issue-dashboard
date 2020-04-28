@@ -1,0 +1,15 @@
+name: 'Issue Dashboard'
+description: 'A framework for creating dashboards from user data on GitHub, utilizing GitHub Actions and GitHub Pages.'
+author: 'Edward Thomson'
+inputs:
+  config:
+    description: The configuration for the dashboards.
+    required: true
+  token: 
+    description: The Personal Authentication Token to use for authentication.
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'align-left' 
+  color: blue

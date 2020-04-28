@@ -1,0 +1,103 @@
+title: JavaScript Expressions
+description: |
+  An example of using JavaScript expressions within widgets.
+
+output:
+  format: html
+  filename: dashboard.html
+
+setup: |
+  userdata.fibonacci = function(n) {
+    if (n == 0) {
+      return 0
+    }
+    else if (n == 1) {
+      return 1
+    }
+    else {
+      return userdata.fibonacci(n - 1) + userdata.fibonacci(n - 2)
+    }
+  }
+
+  userdata.fibonacci_color = function(n) { return n <= 1 ? 'blue' : 'black' }
+
+  userdata.fizzbuzz = function(n) {
+    if ((+n % 15) == 0)
+      return { value: 'Fizz Buzz', color: 'red' }
+    else if ((+n % 5) == 0)
+      return { value: 'Buzz', color: 'green' }
+    else if ((+n % 3) == 0)
+      return { value: 'Fizz', color: 'blue' }
+    else
+      return { value: n }
+  }
+
+sections:
+- title: 'Fibonacci'
+  description: 'Calculate fibonacci numbers'
+  widgets:
+  - type: 'string'
+    title: 'JavaScript code'
+    value: '{{ userdata.fibonacci }}'
+    url: 'https://en.wikipedia.org/wiki/Fibonacci_number'
+
+  - type: 'number'
+    title: 'F0'
+    value: '{{ userdata.fibonacci(0) }}'
+    color: '{{ userdata.fibonacci_color(0) }}'
+  - type: 'number'
+    title: 'F1'
+    value: '{{ userdata.fibonacci(1) }}'
+    color: '{{ userdata.fibonacci_color(1) }}'
+  - type: 'number'
+    title: 'F2'
+    value: '{{ userdata.fibonacci(2) }}'
+    color: '{{ userdata.fibonacci_color(2) }}'
+  - type: 'number'
+    title: 'F3'
+    value: '{{ userdata.fibonacci(3) }}'
+    color: '{{ userdata.fibonacci_color(3) }}'
+  - type: 'number'
+    title: 'F4'
+    value: '{{ userdata.fibonacci(4) }}'
+    color: '{{ userdata.fibonacci_color(4) }}'
+  - type: 'number'
+    title: 'F5'
+    value: '{{ userdata.fibonacci(5) }}'
+    color: '{{ userdata.fibonacci_color(5) }}'
+  - type: 'number'
+    title: 'F6'
+    value: '{{ userdata.fibonacci(6) }}'
+    color: '{{ userdata.fibonacci_color(6) }}'
+  - type: 'number'
+    title: 'F7'
+    value: '{{ userdata.fibonacci(7) }}'
+    color: '{{ userdata.fibonacci_color(7) }}'
+
+- title: 'FizzBuzz'
+  description: 'Calculate the "fizz buzz" interview question'
+  widgets:
+  - type: 'string'
+    title: 'JavaScript code'
+    value: '{{ userdata.fizzbuzz }}'
+    url: 'https://en.wikipedia.org/wiki/Fizz_buzz'
+  - type: 'table'
+    headers: [ 'Number', 'Fizziness' ]
+    elements:
+    - - '1'
+      - script: 'return userdata.fizzbuzz(1)'
+    - [ '2', { script: 'return userdata.fizzbuzz(2)' } ]
+    - [ '3', { script: 'return userdata.fizzbuzz(3)' } ]
+    - [ '4', { script: 'return userdata.fizzbuzz(4)' } ]
+    - [ '5', { script: 'return userdata.fizzbuzz(5)' } ]
+    - [ '6', { script: 'return userdata.fizzbuzz(6)' } ]
+    - [ '7', { script: 'return userdata.fizzbuzz(7)' } ]
+    - [ '8', { script: 'return userdata.fizzbuzz(8)' } ]
+    - [ '9', { script: 'return userdata.fizzbuzz(9)' } ]
+    - [ '10', { script: 'return userdata.fizzbuzz(10)' } ]
+    - [ '11', { script: 'return userdata.fizzbuzz(11)' } ]
+    - [ '12', { script: 'return userdata.fizzbuzz(12)' } ]
+    - [ '13', { script: 'return userdata.fizzbuzz(13)' } ]
+    - [ '14', { script: 'return userdata.fizzbuzz(14)' } ]
+    - [ '15', { script: 'return userdata.fizzbuzz(15)' } ]
+    - [ '16', { script: 'return userdata.fizzbuzz(16)' } ]
