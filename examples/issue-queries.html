@@ -1,0 +1,329 @@
+
+<html>
+<head>
+<title>Issue Query Example</title>
+<link rel="stylesheet" href="dashboard.css" type="text/css" media="all">
+<script src="dashboard.js"></script>
+</head>
+<body>
+<div id="analytics">
+
+<h1>Issue Query Example</h1>
+
+<div id="main_description" class="description">
+An example of several issue queries, both those that are showing
+number widgets with the number of results, and tables that show
+results.
+
+These issues are querying the libgit2/libgit2 repository.
+
+</div>
+
+<div class="sections">
+<div class="section">
+<div class="section_metadata">
+<a name="open-issues-by-type"></a>
+<h2 class="section_title">Open Issues by Type</h2>
+
+<div class="description">
+Queries of issues by type, using their label.
+</div>
+
+</div> <!-- section_metadata -->
+<div class="section_widgets">
+<div class="number_widgets">
+<a name="bug"></a>
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20label%3Abug">
+<div class="number_widget red">
+<span class="title">Bug</span>
+<span class="value">7</span>
+</div>
+</a>
+<a name="feature"></a>
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20label%3Afeature">
+<div class="number_widget green">
+<span class="title">Feature</span>
+<span class="value">16</span>
+</div>
+</a>
+<a name="up-for-grabs"></a>
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20label%3A%22up%20for%20grabs%22">
+<div class="number_widget blue">
+<span class="title">Up for Grabs</span>
+<span class="value">22</span>
+</div>
+</a>
+<a name="easy-fix"></a>
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20label%3A%22easy%20fix%22">
+<div class="number_widget blue">
+<span class="title">Easy Fix</span>
+<span class="value">3</span>
+</div>
+</a>
+</div> <!-- number_widgets -->
+</div> <!-- section_widgets -->
+</div> <!-- section -->
+<div class="section">
+<div class="section_metadata">
+<a name="open-issues-by-age"></a>
+<h2 class="section_title">Open Issues by Age</h2>
+
+<div class="description">
+Queries of open issues by their creation date.
+</div>
+
+</div> <!-- section_metadata -->
+<div class="section_widgets">
+<div class="graph_widget">
+<a name="age"></a>
+<h3 class="graph_title">Age</h3>
+<div class="graph">
+<div class="graph_item green">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A%3E2020-04-21">
+<span class="title">7 days</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A%3E2020-04-21">
+<span class="value empty_value" style="width: 0%;"></span>
+</a>
+</span>
+</div>
+<div class="graph_item blue">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2020-03-29..2020-04-21">
+<span class="title">30 days</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2020-03-29..2020-04-21">
+<span class="value" style="width: 5%;">9</span>
+</a>
+</span>
+</div>
+<div class="graph_item">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2020-01-29..2020-03-29">
+<span class="title">90 days</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2020-01-29..2020-03-29">
+<span class="value" style="width: 9%;">16</span>
+</a>
+</span>
+</div>
+<div class="graph_item">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2019-04-28..2020-01-29">
+<span class="title">1 year</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2019-04-28..2020-01-29">
+<span class="value" style="width: 25%;">42</span>
+</a>
+</span>
+</div>
+<div class="graph_item red">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2018-04-28..2019-04-28">
+<span class="title">2 years</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2018-04-28..2019-04-28">
+<span class="value" style="width: 18%;">30</span>
+</a>
+</span>
+</div>
+<div class="graph_item red">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2017-04-28..2018-04-28">
+<span class="title">3 years</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A2017-04-28..2018-04-28">
+<span class="value" style="width: 16%;">26</span>
+</a>
+</span>
+</div>
+<div class="graph_item red">
+<span class="graph_item_title">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A%3C2019-04-29">
+<span class="title">>3 years</span>
+</a>
+</span>
+<span class="graph_item_value">
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Aissue%20created%3A%3C2019-04-29">
+<span class="value" style="width: 100%;">162</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div> <!-- section_widgets -->
+</div> <!-- section -->
+<div class="section">
+<div class="section_metadata">
+<a name="pull-requests"></a>
+<h2 class="section_title">Pull Requests</h2>
+
+</div> <!-- section_metadata -->
+<div class="section_widgets">
+<div class="number_widgets">
+<a name="changes-requested"></a>
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Apr%20review%3Achanges_requested">
+<div class="number_widget green">
+<span class="title">Changes Requested</span>
+<span class="value">8</span>
+</div>
+</a>
+<a name="needs-review"></a>
+<a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Apr%20review%3Anone">
+<div class="number_widget red">
+<span class="title">Needs Review</span>
+<span class="value">73</span>
+</div>
+</a>
+</div> <!-- number_widgets -->
+<div class="table_widget">
+<a name="pull-requests-with-changes-requested"></a>
+<h3 class="table_title"><a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Apr%20review%3Achanges_requested%20sort%3Acreated-asc">Pull Requests with Changes Requested</a></h3>
+<table class="table">
+<tr class="table_header">
+<th>Issue</th>
+<th>Title</th>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3519">3519</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3519">[examples/log.c]: Adds --log-size function</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4316">4316</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4316">Fix reference renaming reflog</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4324">4324</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4324">Use find_package instead of pkg-config on Windows for libssh2</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4331">4331</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4331">Shallow support</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4520">4520</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4520">Support long file and branch names in checkout conflict creation</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4620">4620</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4620">Hook support</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/5350">5350</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/5350">futils_mktmp: don't use umask.</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/5366">5366</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/5366">[WIP] Asynchroneous network API</a></td>
+</tr>
+</table>
+</div>
+<div class="table_widget">
+<a name="oldest-pull-requests-without-review"></a>
+<h3 class="table_title"><a href="https://github.com/libgit2/libgit2/issues?q=is%3Aopen%20is%3Apr%20review%3Anone%20sort%3Acreated-asc">Oldest Pull Requests without Review</a></h3>
+<table class="table">
+<tr class="table_header">
+<th>Issue</th>
+<th>Date</th>
+<th>Title</th>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/2101">2101</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2101">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2101">Add a warning API and use it for bad signatures</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/2589">2589</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2589">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2589">WinHTTP: Try to detect and use system configured proxy</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/2787">2787</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2787">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2787">Add API to precompile all diff drivers</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/2898">2898</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2898">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/2898">Race condition in fs refs iterator when refs are packed by another process</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3075">3075</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3075">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3075">Split the concerns of the commit creation functions</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3191">3191</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3191">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3191">Add test to investigate case folding on Windows.</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3722">3722</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3722">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3722">Warnings API redux</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3729">3729</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3729">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3729">[WIP] Operation cancellation support</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3742">3742</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3742">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3742">[WIP] git_status_options: support non-recursive directories status (issue #3675)</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3746">3746</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3746">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3746">[WIP] Add a script to help CTest run clar suites in parallel</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3839">3839</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3839">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3839">WIP: respect index during checkout</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3918">3918</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3918">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3918">ASan Support</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/3967">3967</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3967">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/3967">Fix for updating uninitialized submodules that have ignore all set</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4113">4113</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4113">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4113">[WIP] Add support for reading attributes out of trees</a></td>
+</tr>
+<tr class="table_element">
+<td><a href="https://github.com/libgit2/libgit2/pull/4177">4177</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4177">2020-04-28</a></td>
+<td><a href="https://github.com/libgit2/libgit2/pull/4177">Support http cookie file</a></td>
+</tr>
+</table>
+</div>
+</div> <!-- section_widgets -->
+</div> <!-- section -->
+
+</div> <!-- sections -->
+<div id="footer">
+Generated by <a href="https://github.com/ethomson/dashboard" target="_blank" rel="noopener noreferrer">dashboard</a>
+</div>
+</div> <!-- analytics -->
+</body>
+</html>
