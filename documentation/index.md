@@ -160,7 +160,7 @@ sections:
     color: 'blue'
   - type: number
     value: '0.454'
-    title: 'Kilographs in a pound'
+    title: 'Kilograms in a pound'
     color: 'red'
   - type: number
     value: '1.06'
