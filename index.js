@@ -2678,7 +2678,7 @@ class HtmlRenderer {
         for (let element of widget.elements) {
             let num = element;
             let value = num.value;
-            let scaled = Math.floor((value / max) * 100);
+            let scaled = (max > 0) ? Math.floor((value / max) * 100) : 0;
             html.push(`<div class="graph_item${num.color ? ' ' + num.color : ''}">`);
             html.push(`<span class="graph_item_title">`);
             if (num.title != null) {
