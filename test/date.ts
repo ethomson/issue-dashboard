@@ -39,6 +39,9 @@ describe('Date adjustment parsing', () => {
         expect(datetime('2019-01-01')).to.eql('2019-01-01T00:00:00Z')
         expect(datetime('2018-10-11T13:44:22Z')).to.eql('2018-10-11T13:44:22Z')
     })
+    it('can get a relative date', () => {
+        expect(date("startOfMonth").split('-')[2]).to.eql('01')
+    })
     it('can adjust a specific date', () => {
         expect(date('2019-01-01 - 1 day')).to.eql('2018-12-31')
         expect(date('2019-01-01 - 2 years - 3 months - 2 days ')).to.eql('2016-09-29')
