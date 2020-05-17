@@ -4,6 +4,7 @@ import { Analytics } from './analytics'
 import { AnalyticsConfig } from './config'
 import { HtmlRenderer } from './render_html'
 import { MarkdownRenderer } from './render_markdown'
+import { JSONRenderer } from './render_json'
 
 export abstract class Renderer { 
     public abstract render(analytics: Analytics): void
@@ -17,7 +18,9 @@ export abstract class Renderer {
             throw new Error(`config: 'output.format' is not defined`)
         }
 
-        if (config.output.format == 'markdown') {
+        if (config.output.format == 'json') {
+            return new JSONRenderer(config)
+        } else if (config.output.format == 'markdown') {
             return new MarkdownRenderer(config)
         }
         else if (config.output.format == 'html') {
