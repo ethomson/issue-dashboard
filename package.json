@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/ethomson/issue-dashboard#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.1.1",
     "@types/chai": "^4.2.11",
     "@types/js-yaml": "^3.12.3",
