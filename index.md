@@ -60,13 +60,13 @@ For more information about installation, see the [documentation](documentation#i
 
 ## Example Configuration
 
-* **[Static values](https://github.com/ethomson/issue-dashboard/blob/master/examples/static-values.yml)** ([Rendered output](https://ethomson.github.io/issue-dashboard/examples/static-values.html))
+* **[Static values](https://github.com/ethomson/issue-dashboard/blob/main/examples/static-values.yml)** ([Rendered output](https://ethomson.github.io/issue-dashboard/examples/static-values.html))
   The simplest way to configure a dashboard is using static values.  This may be useful to provide a rendered dashboard to existing data, which can be exported as YAML or JSON configuration.
 
-* **[GitHub issue and pull request queries](https://github.com/ethomson/issue-dashboard/blob/master/examples/issue-queries.yml)** ([Rendered output](https://ethomson.github.io/issue-dashboard/examples/issue-queries.html))
+* **[GitHub issue and pull request queries](https://github.com/ethomson/issue-dashboard/blob/main/examples/issue-queries.yml)** ([Rendered output](https://ethomson.github.io/issue-dashboard/examples/issue-queries.html))
   Dashboards can query GitHub issue and pull request data easily, by providing the query string.  Either the number of matching results will be displayed (for numeric values) or the actual results of the query will be shown (for tables).  Helpful date and time manipulation functions are included.
 
-* **[JavaScript expressions](https://github.com/ethomson/issue-dashboard/blob/master/examples/javascript-expressions.yml)** ([Rendered output](https://ethomson.github.io/issue-dashboard/examples/javascript-expressions.html))
+* **[JavaScript expressions](https://github.com/ethomson/issue-dashboard/blob/main/examples/javascript-expressions.yml)** ([Rendered output](https://ethomson.github.io/issue-dashboard/examples/javascript-expressions.html))
   Dashboards can execute JavaScript expressions to provide the values for widgets.
 
 For more information about configuration, see the [documentation](documentation#configuration).
