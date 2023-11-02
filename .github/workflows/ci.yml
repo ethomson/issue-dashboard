@@ -92,7 +92,7 @@ jobs:
         cp documentation/*.png gh-pages/documentation/
 
         cp resources/dashboard.js gh-pages/examples/dashboard.js
-        cp resources/default.css gh-pages/examples/dashboard.css
+        cp resources/dashboard.css gh-pages/examples/dashboard.css
 
     # This is not an example of best practices of using this action.
     # Normally, you would specify your configuration in-line to the
